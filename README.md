@@ -1,7 +1,5 @@
-# 🎧 iMic (Bluetooth Sound Guard)
-
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/3ecbf51a-cee7-4452-8729-eb985116e00b" width="128" height="128" alt="iMic Icon">
+  <img src="https://raw.githubusercontent.com/20nPOINTs/iMic-macOS/main/Resources/AppIcon.png" width="128" height="128" alt="iMic Icon">
   <br>
   <h2 align="center">"당신의 에어팟에 음질의 자유를."</h2>
   <p align="center"><i>"Freedom of Sound Quality for Your AirPods."</i></p>
