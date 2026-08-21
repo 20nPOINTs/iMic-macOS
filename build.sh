@@ -32,13 +32,15 @@ cat > "$APP_DIR/Contents/Info.plist" << EOF
     <key>CFBundleIdentifier</key>
     <string>com.user.iMic</string>
     <key>CFBundleName</key>
-    <string>$APP_NAME</string>
+    <string>iMic Beta</string>
+    <key>CFBundleDisplayName</key>
+    <string>iMic Beta</string>
     <key>CFBundleIconFile</key>
     <string>AppIcon</string>
     <key>CFBundleVersion</key>
-    <string>1.0</string>
+    <string>1.0.0-beta</string>
     <key>CFBundleShortVersionString</key>
-    <string>1.0</string>
+    <string>1.0.0-beta</string>
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>LSUIElement</key>
@@ -52,10 +54,6 @@ cat > "$APP_DIR/Contents/Info.plist" << EOF
 EOF
 
 echo "🔏 Signing app bundle with persistent local certificate..."
-if security find-certificate -c "iMic Self Signed" >/dev/null 2>&1; then
-    codesign --force --deep -s "iMic Self Signed" "$APP_DIR"
-else
-    codesign --force --deep -s - "$APP_DIR"
-fi
+codesign --force --deep -s "iMic Self Signed" "$APP_DIR" 2>/dev/null || codesign --force --deep -s - "$APP_DIR"
 
 echo "✨ Build complete! $APP_DIR created."

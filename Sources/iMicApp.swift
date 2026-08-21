@@ -8,7 +8,7 @@ struct iMicApp: App {
         let state = AppState()
         _appState = StateObject(wrappedValue: state)
         
-        _ = IDAMAutomator.shared
+        IDAMAutomator.shared.startMonitoring(appState: state)
         AudioEngine.shared.startMonitoring(appState: state)
         USBMonitor.shared.startMonitoring()
     }
@@ -35,8 +35,24 @@ struct ContentView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("🎧 iMic (Bluetooth Sound Guard)")
-                .font(.headline)
+            HStack(spacing: 6) {
+                Text("🎧 iMic")
+                    .font(.headline)
+                
+                Text("BETA")
+                    .font(.system(size: 9, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 2)
+                    .background(Color.orange)
+                    .cornerRadius(4)
+                
+                Spacer()
+                
+                Text("v1.0.0-beta")
+                    .font(.caption2)
+                    .foregroundColor(.secondary)
+            }
             
             Divider()
             
