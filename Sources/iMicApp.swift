@@ -8,7 +8,7 @@ struct iMicApp: App {
         let state = AppState()
         _appState = StateObject(wrappedValue: state)
         
-        _ = IDAMAutomator.shared
+        IDAMAutomator.shared.startMonitoring(appState: state)
         AudioEngine.shared.startMonitoring(appState: state)
         USBMonitor.shared.startMonitoring()
     }
