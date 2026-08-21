@@ -94,6 +94,13 @@ class AudioEngine {
             self.appState?.isBTHeadsetActive = isBTHeadsetOut
             self.appState?.isIpadActive = isIDAMIn
             
+            // Auto-clear handshake warning if iPad is registered or if device is unplugged
+            if self.findDeviceID(matching: "ipad", isInput: true) != nil {
+                self.appState?.handshakeWarning = nil
+            } else if !USBMonitor.shared.isIDAMDeviceConnected() {
+                self.appState?.handshakeWarning = nil
+            }
+            
             // High quality is maintained when output is not BT headset or input is a non-BT high quality mic
             let isBTHeadsetIn = self.isBluetooth(deviceID: inputDeviceID)
             self.appState?.isHighQuality = !isBTHeadsetOut || (!isBTHeadsetIn && inputDeviceID != kAudioObjectUnknown)

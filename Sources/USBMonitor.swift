@@ -73,7 +73,9 @@ private func usbDeviceRemoved(context: UnsafeMutableRawPointer?, iterator: io_it
     while case let dev = IOIteratorNext(iterator), dev != 0 {
         IOObjectRelease(dev)
     }
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+    print("[USBMonitor] USB device REMOVE detected! Updating audio state...")
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        AudioEngine.shared.appState?.handshakeWarning = nil
         AudioEngine.shared.updateState()
     }
 }
@@ -92,12 +94,16 @@ private func usbDeviceAdded(context: UnsafeMutableRawPointer?, iterator: io_iter
     }
     
     if foundIDAMDevice {
-        print("[USBMonitor] iPad/iPhone USB hotplug detected! Updating audio state...")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        print("[USBMonitor] iPad/iPhone USB hotplug INSERT detected! Triggering IDAM & updating audio state...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            NotificationCenter.default.post(name: .triggerIDAM, object: nil)
             AudioEngine.shared.updateState()
         }
     } else {
-        print("[USBMonitor] USB device added, but not an iPad/iPhone.")
+        print("[USBMonitor] USB device added, updating audio state...")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            AudioEngine.shared.updateState()
+        }
     }
 }
 
