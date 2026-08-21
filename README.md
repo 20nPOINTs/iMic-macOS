@@ -1,10 +1,13 @@
 # 🎧 iMic (Bluetooth Sound Guard)
 
 <p align="center">
-  <span style="font-size: 400px;">🎧</span>
+  <img src="https://github.com/user-attachments/assets/3ecbf51a-cee7-4452-8729-eb985116e00b" width="128" height="128" alt="iMic Icon">
   <br>
   <h2 align="center">"당신의 에어팟에 음질의 자유를."</h2>
-  <p align="center"><i>Free your AirPods audio from 16kHz voice-call degradation.</i></p>
+  <p align="center"><i>"Freedom of Sound Quality for Your AirPods."</i></p>
+  <p align="center">
+    <b><a href="#-english">English</a></b> | <b><a href="#-한국어">한국어</a></b>
+  </p>
 </p>
 
 <p align="center">
@@ -16,25 +19,26 @@
 
 ---
 
-### 🧐 왜 만들었나요? (The Problem)
+# 🌐 English
 
-에어팟이나 블루투스 헤드셋을 착용하고 **디스코드, 줌(Zoom), 온라인 게임, 화상회의**를 켜는 순간, 40만 원짜리 에어팟의 소리가 **20년 전 16kHz 모노(동굴/전화기 음질)로 떡락**하는 고질적인 현상을 겪어보셨을 겁니다.
+### 🧐 The Problem
 
-* **원인**: 블루투스 대역폭 한계로 인해, 마이크가 켜지는 순간 음악 모드(A2DP)에서 통화 모드(HFP/SCO)로 강제 다운그레이드되기 때문입니다.
-* **특히 데스크탑 맥(Mac mini, Mac Studio)**: 본체에 자체 내장 마이크가 아예 없어 비싼 외장 마이크를 추가로 사지 않는 이상 이 문제를 피하기 어렵습니다.
+Have you ever joined a **Discord voice channel, Zoom meeting, Google Meet, or gaming voice chat** with your AirPods (or any Bluetooth headset) on macOS, only to find that your crystal-clear audio suddenly collapses into **muffled, 20-year-old telephone-quality mono audio**?
 
-> **"맥 옆에 늘 꽂혀있는 아이패드나 아이폰의 스튜디오급 마이크를 맥용 유선 마이크로 쓸 수 없을까?"**
+* **The Cause**: Due to Bluetooth bandwidth limitations, the moment a microphone stream is requested, macOS forcibly downgrades the Bluetooth profile from high-fidelity music playback (**A2DP**) to low-bandwidth bidirectional voice-call mode (**HFP/SCO**).
+* **Especially on Desktop Macs (Mac mini, Mac Studio)**: These machines have no built-in microphones at all, leaving users stuck with degraded Bluetooth audio unless they buy expensive external USB mics.
+
+> **"Why can't we use the studio-grade microphones on our plugged-in iPad or iPhone as a wired Mac microphone automatically?"**
 > 
-> 이 고민에서 출발하여 무거운 서드파티 드라이버나 단축어 없이 100% 자체 동작하는 **초경량 순수 네이티브 macOS 메뉴바 앱 `iMic`**을 개발했습니다.
+> To solve this once and for all without heavy virtual drivers or manual Shortcut clicks, we built **`iMic`**—an ultra-lightweight, 100% pure native macOS menu bar utility.
 
 ---
 
-### ✨ 핵심 기능 (Key Features)
+### ✨ Key Features
 
 ```mermaid
 flowchart LR
-    A[🎧 에어팟/BT 착용 감지] --> B[⚡ iMic 자동 개입]
-    B --> C[📱 아이패드 IDAM 활성화 / 아이폰 감지]
-    C --> D[🎙️ 마이크만 유선으로 가로채기]
-    D --> E[✨ 에어팟 HiFi 스테레오 유지!]
-<img width="512" height="512" alt="AppIcon" src="https://github.com/user-attachments/assets/3ecbf51a-cee7-4452-8729-eb9bdd410e58" />
+    A["🎧 Headset Connection Detected"] --> B["⚡ iMic Auto-Intervention"]
+    B --> C["📱 Enable iPad IDAM / Detect iPhone"]
+    C --> D["🎙️ Route Mic Input to Wired Source"]
+    D --> E["✨ Preserve Full Hi-Fi Stereo Audio!"]
