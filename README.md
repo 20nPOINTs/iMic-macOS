@@ -78,6 +78,12 @@ The menu bar icon badge dynamically adapts to reflect your currently active micr
 3. On first launch, grant Accessibility permission once in [System Settings > Privacy & Security > Accessibility].
 4. **Done!** Just plug in your iPad/iPhone and put on your AirPods—everything works in full high-fidelity audio automatically. 🚀
 
+> [!NOTE]
+> **Why is this app unnotarized?**
+> `iMic` started as a personal passion project to solve a specific everyday inconvenience and is currently in its early development stage. Because it is an evolving, non-commercial open-source project, it has not yet undergone Apple's formal developer notarization process.
+> 
+> **First-Launch Tip**: If macOS displays an *"unidentified developer"* prompt on first open, simply **Right-Click (Control + Click) `iMic.app` in your Applications folder → click [Open] → click [Open]** (required only once).
+
 ---
 
 <br><br>
@@ -113,7 +119,7 @@ flowchart LR
 * **🔄 실시간 핫플러그(Hot-plug) 동기화**: USB 마이크나 아이폰/아이패드를 꽂거나 뽑는 즉시 0.1초 만에 메뉴와 오디오 상태가 실시간 갱신됩니다.
 * **🎧 모든 블루투스 헤드셋 지원**: 에어팟(AirPods / Pro / Max)뿐만 아니라 **소니(Sony), 삼성 갤럭시 버즈, 보스(Bose)** 등 모든 블루투스 무선 이어폰/헤드폰에서 동일하게 동작합니다.
 
-
+---
 
 ### 🎨 하드웨어 맞춤형 메뉴바 아이콘
 
@@ -142,6 +148,12 @@ flowchart LR
 2. `iMic.app`을 `Applications` 폴더로 드래그합니다.
 3. 최초 실행 시 안내에 따라 [시스템 설정 > 손쉬운 사용] 권한을 1회 허용합니다.
 4. **끝!** 이제 아이패드나 아이폰을 꽂고 에어팟을 끼기만 하면 모든 것이 자동으로 고음질로 작동합니다. 🚀
+
+> [!NOTE]
+> **애플 공증(Notarization) 관련 안내**
+> `iMic`은 제가 맥을 쓰며 겪었던 지극히 개인적인 불편함을 해결하기 위해 시작된 **초기 개발 단계의 개인 오픈소스 프로젝트**입니다. 아직 완성도를 다듬어가는 초기 버전이기에 정식 애플 개발자 공증을 거치지 않고 자체 서명으로 배포하게 되었습니다.
+> 
+> **첫 실행 팁**: 처음 실행 시 *"확인되지 않은 개발자"* 알림이 뜨면, **`응용 프로그램` 폴더에서 `iMic.app`을 마우스 우클릭(또는 Control + 클릭) → [열기] → [열기]**를 눌러 실행해 주시면 이후 정상 동작합니다.
 
 ---
 
