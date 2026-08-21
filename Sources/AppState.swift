@@ -11,6 +11,9 @@ class AppState: ObservableObject {
     // Real-time categorized input device list
     @Published var availableInputDevices: [(name: String, uid: String, category: MicCategory)] = []
     
+    // Handshake error & warning state
+    @Published var handshakeWarning: String? = nil
+    
     // 이 상태를 UI에 표시하여 사용자가 현재 음질이 16kHz로 떨어졌는지 48kHz인지 알 수 있게 함
     @Published var isHighQuality: Bool = true 
     

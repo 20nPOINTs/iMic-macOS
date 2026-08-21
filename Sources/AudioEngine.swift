@@ -359,9 +359,12 @@ class AudioEngine {
         AudioObjectSetPropertyData(UInt32(kAudioObjectSystemObject), &setAddress, 0, nil, size, &newDeviceID)
     }
     
-    func setInputToIPad(retryCount: Int = 6) {
+    func setInputToIPad(retryCount: Int = 4) {
         if let ipadID = findDeviceID(matching: "ipad", isInput: true) {
             setDefaultInput(deviceID: ipadID)
+            DispatchQueue.main.async {
+                self.appState?.handshakeWarning = nil
+            }
             print("[AudioEngine] Successfully set input to iPad (Device ID: \(ipadID))")
             return
         }
@@ -372,9 +375,35 @@ class AudioEngine {
                 self.setInputToIPad(retryCount: retryCount - 1)
             }
         } else {
-            print("[AudioEngine] iPad audio device not found after retries. Falling back...")
-            self.performSmartSwitch(btOutputName: getDeviceName(deviceID: getDefaultDevice(isInput: false)))
+            print("[AudioEngine] iPad handshake failed or device locked. Auto-recovering to next mic...")
+            DispatchQueue.main.async {
+                if USBMonitor.shared.isIDAMDeviceConnected() {
+                    self.appState?.handshakeWarning = "⚠️ iPad 화면 잠금을 해제해 주세요"
+                } else {
+                    self.appState?.handshakeWarning = nil
+                }
+            }
+            self.fallbackToNextBestMic(excludingBTName: getDeviceName(deviceID: getDefaultDevice(isInput: false)))
         }
+    }
+    
+    private func fallbackToNextBestMic(excludingBTName: String) {
+        if let iphoneID = findDeviceID(matching: "iphone", isInput: true) {
+            setDefaultInput(deviceID: iphoneID)
+            print("[AudioEngine] Handshake Recovery: Switched to iPhone")
+            return
+        }
+        if let externalID = findExternalMicID(excludingBTName: excludingBTName) {
+            setDefaultInput(deviceID: externalID)
+            print("[AudioEngine] Handshake Recovery: Switched to External mic")
+            return
+        }
+        if let builtInID = findBuiltInMicID() {
+            setDefaultInput(deviceID: builtInID)
+            print("[AudioEngine] Handshake Recovery: Switched to Built-in mic")
+            return
+        }
+        fallbackToBTMic(btOutputName: excludingBTName)
     }
     
     func getDeviceName(deviceID: AudioObjectID) -> String {
