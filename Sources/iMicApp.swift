@@ -39,7 +39,7 @@ struct ContentView: View {
                 Text("🎧 iMic")
                     .font(.headline)
                 
-                Text("BETA 2")
+                Text("BETA")
                     .font(.system(size: 9, weight: .bold))
                     .foregroundColor(.white)
                     .padding(.horizontal, 5)
@@ -49,7 +49,7 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                Text("v1.0.0-beta2")
+                Text("v1.0.0-beta")
                     .font(.caption2)
                     .foregroundColor(.secondary)
             }
@@ -60,16 +60,6 @@ struct ContentView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(appState.isHighQuality ? "🟢 현재 상태: 고음질 유지 중" : "🟠 현재 상태: 통화 모드 (음질 저하)")
                     .font(.body.weight(.medium))
-                
-                if let warning = appState.handshakeWarning {
-                    HStack(spacing: 5) {
-                        Text(warning)
-                            .font(.caption.weight(.medium))
-                            .foregroundColor(.orange)
-                    }
-                    .padding(.vertical, 2)
-                }
-                
                 Text("출력: \(appState.currentOutput)")
                     .font(.body)
                     .foregroundColor(.secondary)
