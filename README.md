@@ -1,7 +1,7 @@
 # 🎧 iMic (Bluetooth Sound Guard)
 
 <p align="center">
-  <img src="Resources/AppIcon.png" width="128" height="128" alt="iMic Icon">
+  <span style="font-size: 80px;">🎧</span>
   <br>
   <h2 align="center">"당신의 에어팟에 음질의 자유를."</h2>
   <p align="center"><i>Free your AirPods audio from 16kHz voice-call degradation.</i></p>
