@@ -48,19 +48,7 @@ flowchart LR
 * **🔄 Real-Time Hot-Plug Sync**: Instantly syncs device lists and audio states within 0.1s whenever USB mics, iPads, or iPhones are connected or disconnected.
 * **🎧 Universal Bluetooth Headset Support**: Works seamlessly across all Bluetooth headphones and earbuds, including **AirPods (Standard / Pro / Max), Sony (WH/WF series), Samsung Galaxy Buds, Bose**, and more.
 
----
 
-### 🏆 Comparison with SoundSource
-
-| Feature | SoundSource | **iMic (Our Solution)** |
-| :--- | :--- | :--- |
-| **AirPods Spatial Audio & Head Tracking** | ❌ **Forcibly Disabled** (virtual driver limit) | 🟢 **100% Native & Fully Preserved** |
-| **Wired iPad IDAM Auto-Activation** | ❌ **Not Supported** (manual setup required) | 🟢 **100% Automated upon USB plug-in** |
-| **System Stability & Drivers** | ⚠️ **Requires Kernel/Virtual Drivers (ACE)** | 🟢 **Pure Native (0% driver installation)** |
-| **Resource Usage** | Heavy (hundreds of MBs, persistent load) | **Ultra-Lightweight (<1MB, 0.0% CPU)** |
-| **Price** | $39 USD (~55,000 KRW) | **100% Free & Open Source** |
-
----
 
 ### 🎨 Hardware-Adaptive Menu Bar Icons
 
@@ -125,19 +113,7 @@ flowchart LR
 * **🔄 실시간 핫플러그(Hot-plug) 동기화**: USB 마이크나 아이폰/아이패드를 꽂거나 뽑는 즉시 0.1초 만에 메뉴와 오디오 상태가 실시간 갱신됩니다.
 * **🎧 모든 블루투스 헤드셋 지원**: 에어팟(AirPods / Pro / Max)뿐만 아니라 **소니(Sony), 삼성 갤럭시 버즈, 보스(Bose)** 등 모든 블루투스 무선 이어폰/헤드폰에서 동일하게 동작합니다.
 
----
 
-### 🏆 사운드소스(SoundSource)와의 차이점
-
-| 비교 항목 | SoundSource | **iMic (우리 앱)** |
-| :--- | :--- | :--- |
-| **에어팟 공간 음향 & 머리 추적** | ❌ **강제 비활성화됨** (가상화 한계) | 🟢 **100% 완벽 지원 (순정 유지)** |
-| **iPad IDAM 유선 마이크 자동화** | ❌ **지원 안 함** (수동 활성화 필요) | 🟢 **꽂으면 1초 만에 100% 자동 활성화** |
-| **시스템 안전성 & 가상 드라이버** | ⚠️ **가상 드라이버(ACE) 필수 설치** (데드락 위험) | 🟢 **순수 Native (드라이버 설치 0%)** |
-| **시스템 리소스 점유율** | 무거움 (수백 MB 상시 점유) | **초경량 (1MB 미만, CPU 0.0%)** |
-| **가격** | $39 (약 55,000원) | **완전 무료 & 오픈소스** |
-
----
 
 ### 🎨 하드웨어 맞춤형 메뉴바 아이콘
 
