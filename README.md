@@ -1,7 +1,7 @@
 # 🎧 iMic (Bluetooth Sound Guard)
 
 <p align="center">
-  <span style="font-size: 80px;">🎧</span>
+  <span style="font-size: 400px;">🎧</span>
   <br>
   <h2 align="center">"당신의 에어팟에 음질의 자유를."</h2>
   <p align="center"><i>Free your AirPods audio from 16kHz voice-call degradation.</i></p>
@@ -37,3 +37,4 @@ flowchart LR
     B --> C[📱 아이패드 IDAM 활성화 / 아이폰 감지]
     C --> D[🎙️ 마이크만 유선으로 가로채기]
     D --> E[✨ 에어팟 HiFi 스테레오 유지!]
+<img width="512" height="512" alt="AppIcon" src="https://github.com/user-attachments/assets/3ecbf51a-cee7-4452-8729-eb9bdd410e58" />
