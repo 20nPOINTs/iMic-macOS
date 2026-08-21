@@ -140,7 +140,7 @@ struct ContentView: View {
             // Bottom Bar: Left and Right aligned
             HStack {
                 Button("GitHub 방문") {
-                    if let url = URL(string: "https://github.com") {
+                    if let url = URL(string: "https://github.com/20nPOINTs/iMic-macOS") {
                         NSWorkspace.shared.open(url)
                     }
                 }
